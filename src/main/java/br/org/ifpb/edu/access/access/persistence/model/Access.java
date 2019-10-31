@@ -56,11 +56,11 @@ public class Access implements Serializable {
         this.id = id;
     }
 
-    public Boolean getHasTotalAccess() {
+    public Boolean hasTotalAccess() {
         return hasTotalAccess;
     }
 
-    public void setHasTotalAccess(Boolean hasTotalAccess) {
+    public void setTotalAccess(Boolean hasTotalAccess) {
         this.hasTotalAccess = hasTotalAccess;
     }
 
