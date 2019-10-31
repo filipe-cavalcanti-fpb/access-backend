@@ -1,5 +1,7 @@
 package br.org.ifpb.edu.access.access.persistence.model;
 
+import br.org.ifpb.edu.access.access.util.RegexUtil;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +19,8 @@ import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.util.Objects;
 
+import static br.org.ifpb.edu.access.access.util.RegexUtil.REGISTER_REGEX;
+
 @Entity
 @Table(name = "access_user")
 @SequenceGenerator(name = "access_user_seq", sequenceName = "access_user_seq")
@@ -33,7 +37,7 @@ public class User implements Serializable {
     private String name;
 
     @NotNull
-    @Pattern(regexp = "^[0-9]{12}|[0-9]{6}$")
+    @Pattern(regexp = REGISTER_REGEX)
     @Column(name = "register")
     private String register;
 
